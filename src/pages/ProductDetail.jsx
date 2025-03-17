@@ -62,8 +62,8 @@ function ProductDetail() {
   return (
     <div className="container mt-5 text-white">
       <h2 className="fw-bold">{product.nombre}</h2>
-      <p className="text-warning fw-bold">${product.precio.toFixed(2)}</p>
-      <p>{product.descripcion}</p>
+      <p className="text-success fw-bold">Estado: {product.estado}</p>
+      <h3 className="text-warning fw-bold">${product.precio.toFixed(2)}</h3>
 
       <div className="d-flex flex-row">
         <div className="d-flex flex-column">
