@@ -10,7 +10,6 @@ import Register from "./pages/Register";
 import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-import Notifications from "./pages/Notifications";
 import CategoryPage from "./pages/CategoryPage";
 
 // ✅ Páginas individuales para Usados, Nuevos y Categorías
@@ -22,7 +21,6 @@ import Microfonos from "./pages/Microfonos";
 import Accesorios from "./pages/Accesorios";
 import Todo from "./pages/Todo";
 
-import PaymentMethods from "./pages/PaymentMethods";
 import Addresses from "./pages/Addresses";
 import MisPublicaciones from "./pages/MisPublicaciones";
 import CrearPublicacion from "./pages/CrearPublicacion";
@@ -123,9 +121,7 @@ function App() {
           {/* ✅ Rutas de Usuario */}
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/mis-publicaciones" element={<MisPublicaciones />} />
-          <Route path="/profile/metodos-de-pago" element={<PaymentMethods />} />
           <Route path="/profile/direcciones" element={<Addresses />} />
-          <Route path="/profile/notificaciones" element={<Notifications />} />
           <Route path="/profile/mis-compras" element={<MisCompras />} />
 
           {/* ✅ Rutas de Publicaciones */}
