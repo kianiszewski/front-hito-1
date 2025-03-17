@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// Productos hardcodeados para asegurarse de que siempre estén disponibles
 const HARD_CODED_PRODUCTS = [
   {
     id_producto: "1742172003649",
@@ -65,10 +64,8 @@ function Products() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Obtener productos almacenados en localStorage
     const storedProducts = JSON.parse(localStorage.getItem("productos")) || [];
 
-    // Si localStorage está vacío, guardamos los productos hardcodeados
     if (storedProducts.length === 0) {
       localStorage.setItem("productos", JSON.stringify(HARD_CODED_PRODUCTS));
       setProducts(HARD_CODED_PRODUCTS);
@@ -93,7 +90,7 @@ function Products() {
         >
           {products.map((product) => (
             <div
-              key={product.id_producto}
+              key={product.id_producto || Math.random()} // Evita errores de clave duplicada
               style={{
                 border: "1px solid #ddd",
                 padding: "1rem",
@@ -129,7 +126,7 @@ function Products() {
 
               {/* Botón para ver detalles */}
               <Link
-                to={`/producto/${product.id_producto}`}
+                to={product.id_producto ? `/producto/${product.id_producto}` : "#"}
                 style={{
                   display: "inline-block",
                   marginTop: "0.5rem",
